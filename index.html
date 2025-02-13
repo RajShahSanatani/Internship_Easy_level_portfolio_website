@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #e0e0e0, #6f6f6e); 
+      text-align: center;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #6f6f6e;
+      color: #fff;
+      padding: 1em;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+    nav ul li a:hover {
+      color: #e1e115;
+      transform: scale(1.1);
+    }
+    .section-hover:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+    .project {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+    .project img {
+      width: 20%;
+      height: auto;
+      border-radius: 5px;
+    }
+    
+    .project:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, #d4af37, #e1e0e0, #d4af37);
+      background-size: 200% 200%;
+      animation: metallicEffect 2s ease infinite;
+    }
+    .profile-pic {
+      width: 150px; 
+      height: 150px;
+      border-radius: 50%; 
+      display: block;
+      margin: 10px auto; 
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    }
+    .fade-in {
+      animation: fadeIn 2s;
+    }
+    .slide-in {
+      animation: slideIn 1s ease-in-out;
+    }
+    .zoom-in {
+      transition: transform 0.3s;
+    }
+    .zoom-in:hover {
+      transform: scale(1.05);
+    }
+    .btn-animate {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-animate:hover {
+      background: #555;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes metallicEffect {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-form label {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      transition: border 0.3s ease;
+    }
+
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: #6f6f6e;
+      outline: none;
+    }
+
+    .contact-form textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      grid-column: span 2;
+      padding: 12px 25px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form button {
+        grid-column: span 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="fade-in">My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about" class="nav-link">About Me</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about" class="slide-in section-hover">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="about-description">
+        <p>Hi, I’m Raj Shah!<br />
+          I’m a 21-year-old engineering student with a passion for coding and technology. Over the years<br />
+          I’ve created various projects that have not only enhanced my skills but also fueled my curiosity for new challenges. 
+          <br>I’m constantly exploring new tools and technologies because I believe learning never stops.<br><br>
+          Apart from coding, I’m also a social media influencer with over 20k followers on Instagram, where I share my journey, 
+          projects, and experiences. <br> Whether it’s a coding hack or something creative, I love engaging with my audience and 
+          sharing what I learn along the way.</p>
+      </div>
+      <img src="Screenshot 2025-02-08 205834.png" alt="My Photo" class="profile-pic">
+    </div>
+  </section>
+
+  <section id="projects" class="slide-in section-hover">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project zoom-in">
+        <img src="https://play-lh.googleusercontent.com/znc7FD1BqyFR92b8n6hyROZrAR3FsTyV_ThO79hyuQG-Nb45z2qHFDTnf1HXH50DYg=w240-h480-rw" alt="Weather Application" />
+        <h3>Weather Application</h3>
+        <p>
+          A web application that fetches real-time weather data based on user input and displays current temperature, humidity, and conditions.
+        </p>
+      </div>
+      <div class="project zoom-in">
+        <img src="https://www.codewithfaraz.com/img/html,%20css%20and%20javascript%20creating%20an%20animated%20dual%20login%20signup%20form%20that%20delights%20users.jpg" alt="Login Signup Page" />
+        <h3>Login Signup Page</h3>
+        <p>
+          A secure login and signup page with form validation, user authentication, and responsive design.
+        </p>
+      </div>
+      <div class="project zoom-in">
+        <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/board-game/w/c/e/5-tic-tac-toe-game-classic-mind-games-for-kids-wooden-family-original-imagsgz6vxzqsxey.jpeg?q=20&crop=false" alt="Tic-Tac-Toe Game" />
+        <h3>Tic-Tac-Toe Game</h3>
+        <p>
+          An interactive Tic-Tac-Toe game built with JavaScript that allows two players to compete with real-time win detection.
+        </p>
+      </div>
+      <div class="project zoom-in">
+        <img src="https://i0.wp.com/www.magetop.com/blog/wp-content/uploads/2019/12/bigstock-141784805-1-1.jpg?w=900&ssl=1" alt="E-commerce Website" />
+        <h3>E-commerce Website</h3>
+        <p>
+          A feature-rich e-commerce platform with product listings, a shopping cart, and checkout functionality.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="slide-in section-hover">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn-animate">Send Message</button>
+    </form>
+  </section>
+</body>
+</html>
